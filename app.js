@@ -1,10 +1,13 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const TOKEN = "NDA1MzcwNTczMzI2Mzg1MTUy.DUjaSA.XvkL2cOXI81IGqe99941c6y_8aE
+";
 const settings = require('./settings.json');
 const chalk = require('chalk');
 const fs = require('fs');
 const moment = require('moment');
 var bot = new Discord.Client();
+const talkedRecently = new Set();
 require('./util/eventLoader')(client);
  
 const log = message => {
@@ -72,4 +75,4 @@ client.on('error', e => {
   console.log(chalk.bgRed(e.replace(regToken, 'that was redacted')));
 });
  
-client.login(process.env.BOT_TOKEN);
+client.login(TOKEN);
